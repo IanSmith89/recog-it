@@ -12,11 +12,12 @@ function GameController() {
   vm.level = 1;
   vm.current = 1;
   vm.target = (vm.level + 1) * (vm.level + 1);
-  vm.timer = 0;
+  vm.timer = '0:00';
   vm.tileList = [];
   vm.generateTiles = generateTiles;
 
   function generateTiles() {
+    vm.tileList = [];
     var randArr = [];
     for (var i = 1; i <= vm.target; i++) {
       randArr[i] = i;

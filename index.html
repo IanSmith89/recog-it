@@ -21,7 +21,11 @@
       </div>
     </div>
     <div class="game_screen" ng-show="GC.game_screen" ng-init="GC.generateTiles()">
-      <div class="mobile">
+      <div class="stats">
+        <h2 class="level">Level {{GC.level}}</h2>
+        <h2 class="timer">{{GC.timer}}</h2>
+      </div>
+      <div class="grid">
         <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.15em" md-row-height="fit">
           <md-grid-tile ng-repeat="tile in GC.tileList">
             <p>{{tile.value}}</p>
@@ -35,9 +39,8 @@
         <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
         <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
       </div>
-      <div class="stats">
-        <h2 class="level">Level {{GC.level}}</h2>
-        <h2 class="timer">Time: {{GC.timer}}</h2>
+      <div>
+        <h3 ng-click="GC.level = GC.level + 1; GC.target = (GC.level + 1) * (GC.level + 1); GC.generateTiles()">Next Level</h3>
       </div>
     </div>
   </main>
