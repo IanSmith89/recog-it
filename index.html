@@ -5,25 +5,40 @@
   <meta charset="utf-8">
   <title>recog.io</title>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main ng-controller="GameController as GC" ng-cloak>
-    <div class="mobile">
-      <!-- <h2>{{GC.title}}</h2>
+    <h1 class="title">{{GC.title}}</h1>
+    <div class="home_screen" ng-hide="GC.game_screen || GC.recall_screen">
       <div>
-        <input type="submit" role="button" value="start" />
+        <button type="button" ng-click="GC.game_screen = true">START</button>
       </div>
       <div>
-        <input type="submit" role="button" value="about" />
-      </div> -->
-      <md-grid-list md-cols="2" md-gutter="0.25em" md-row-height="fit">
-        <md-grid-tile><h1>1</h1></md-grid-tile>
-        <md-grid-tile><h1>3</h1></md-grid-tile>
-        <md-grid-tile><h1>4</h1></md-grid-tile>
-        <md-grid-tile><h1>2</h1></md-grid-tile>
-      </md-grid-list>
+        <button type="link">ABOUT</button>
+      </div>
+    </div>
+    <div class="game_screen" ng-show="GC.game_screen" ng-init="GC.generateTiles()">
+      <div class="mobile">
+        <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.15em" md-row-height="fit">
+          <md-grid-tile ng-repeat="tile in GC.tileList">
+            <p>{{tile.value}}</p>
+          </md-grid-tile>
+        </md-grid-list>
+      </div>
+      <div class="misses">
+        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+      </div>
+      <div class="stats">
+        <h2 class="level">Level {{GC.level}}</h2>
+        <h2 class="timer">Time: {{GC.timer}}</h2>
+      </div>
     </div>
   </main>
 
@@ -32,7 +47,6 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="app.js"></script>
   <script src="GameController.js"></script>
