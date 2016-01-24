@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="recogApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>recog.io</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main ng-controller="GameController as GC" ng-cloak>
+    <div class="mobile">
+      <h2>{{GC.title}}</h2>
+      <div>
+        <input type="submit" role="button" value="start" />
+      </div>
+      <div>
+        <input type="submit" role="button" value="about" />
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="GameController.js"></script>
+</body>
+
+</html>

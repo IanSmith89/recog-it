@@ -1,0 +1,16 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+.mobile {
+  background: silver;
+  width: 300px;
+  height: 460px;
+  margin: 0 auto;
+  padding: 10px; }
+
+main {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
