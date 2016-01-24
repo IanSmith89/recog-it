@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('recogApp', []);
+angular.module('recogApp', ['ngMaterial']);
