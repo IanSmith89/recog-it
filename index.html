@@ -6,53 +6,22 @@
   <title>recog.io</title>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
-<body>
-  <main ng-controller="GameController as GC" ng-cloak>
-    <h1 class="title">{{GC.title}}</h1>
-    <div class="home_screen" ng-hide="GC.game_screen || GC.recall_screen">
-      <div>
-        <button type="button" ng-click="GC.game_screen = true">START</button>
-      </div>
-      <div>
-        <button type="link">ABOUT</button>
-      </div>
-    </div>
-    <div class="game_screen" ng-show="GC.game_screen" ng-init="GC.generateTiles()">
-      <div class="stats">
-        <h2 class="level">Level {{GC.level}}</h2>
-        <h2 class="timer">{{GC.timer}}</h2>
-      </div>
-      <div class="grid">
-        <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.15em" md-row-height="fit">
-          <md-grid-tile ng-repeat="tile in GC.tileList">
-            <p>{{tile.value}}</p>
-          </md-grid-tile>
-        </md-grid-list>
-      </div>
-      <div class="misses">
-        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-        <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-      </div>
-      <div>
-        <h3 ng-click="GC.level = GC.level + 1; GC.target = (GC.level + 1) * (GC.level + 1); GC.generateTiles()">Next Level</h3>
-      </div>
-    </div>
-  </main>
+<body ng-cloak>
+  <main ng-view></main>
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="app.js"></script>
-  <script src="GameController.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/controllers.js"></script>
+  <script src="./scripts/routes.js"></script>
 </body>
 
 </html>

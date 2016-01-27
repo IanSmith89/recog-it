@@ -8,12 +8,11 @@ function GameController() {
   vm.home_screen = true;
   vm.game_screen = false;
   vm.recall_screen = false;
-  vm.title = 'memor.io';
+  vm.title = 'recog.io';
   vm.level = 1;
   vm.current = 1;
   vm.target = (vm.level + 1) * (vm.level + 1);
   vm.timer = '0:00';
-  vm.tileList = [];
   vm.generateTiles = generateTiles;
 
   function generateTiles() {
@@ -24,10 +23,9 @@ function GameController() {
     }
     randArr.sort(function() {
       return Math.random() - 0.5;
-    });
-    randArr.map(function(num) {
+    }).map(function(randNum) {
       var tile = {};
-      tile.value = num;
+      tile.value = randNum;
       tile.flipped = false;
       vm.tileList.push(tile);
     });
