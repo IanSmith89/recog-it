@@ -1,13 +1,13 @@
 <h1 class="title">{{GC.title}}</h1>
 <div class="home_screen" ng-hide="GC.game_screen || GC.recall_screen">
   <div>
-    <md-button ng-click="GC.game_screen = true">Start</md-button>
+    <md-button ng-click="GC.game_screen = true; GC.generateTiles()">Start</md-button>
   </div>
   <div>
     <md-button>Rules</md-button>
   </div>
 </div>
-<div class="game_screen" ng-show="GC.game_screen" ng-init="GC.generateTiles()">
+<div class="game_screen" ng-show="GC.game_screen">
   <div class="stats">
     <!-- Level could be represented by dots that range in color as they do on the tile-backgrounds -->
     <h2 class="level">Level {{GC.level}}</h2>
@@ -28,6 +28,6 @@
     <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
   </div>
   <div>
-    <h3 ng-click="GC.level = GC.level + 1; GC.target = (GC.level + 1) * (GC.level + 1); GC.generateTiles()">Next Level</h3>
+    <h3 ng-click="GC.nextLevel()">Next Level</h3>
   </div>
 </div>

@@ -10,15 +10,16 @@ function GameController() {
   vm.recall_screen = false;
   vm.title = 'recog.io';
   vm.level = 1;
-  vm.current = 1;
-  vm.target = (vm.level + 1) * (vm.level + 1);
+  var squared = (vm.level + 1) * (vm.level + 1);
+  var counter = 1;
   vm.timer = '0:00';
   vm.generateTiles = generateTiles;
+  vm.nextLevel = nextLevel;
 
   function generateTiles() {
     vm.tileList = [];
     var randArr = [];
-    for (var i = 1; i <= vm.target; i++) {
+    for (var i = 1; i <= squared; i++) {
       randArr[i] = i;
     }
     randArr.sort(function() {
@@ -29,5 +30,11 @@ function GameController() {
       tile.flipped = false;
       vm.tileList.push(tile);
     });
+  }
+
+  function nextLevel() {
+    vm.level++;
+    squared = (vm.level + 1) * (vm.level + 1);
+    vm.generateTiles();
   }
 }
