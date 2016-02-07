@@ -1,7 +1,7 @@
 <h1 class="title">{{GC.title}}</h1>
 <div class="home_screen" ng-hide="GC.game_screen || GC.recall_screen">
   <div>
-    <md-button ng-click="GC.game_screen = true; GC.generateTiles()">Start</md-button>
+    <md-button ng-click="GC.game_screen = true; GC.startGame()">Start</md-button>
   </div>
   <div>
     <md-button>Rules</md-button>
@@ -14,9 +14,11 @@
     <h2 class="timer">{{GC.timer}}</h2>
   </div>
   <div class="grid">
-    <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.15em" md-row-height="fit">
-      <md-grid-tile ng-repeat="tile in GC.tileList">
-        <p>{{tile.value}}</p>
+    <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.5%" md-row-height="fit">
+      <md-grid-tile ng-repeat="tile in GC.tileList" id="{{tile.value}}" level="{{tile.level}}">
+        <p>
+          {{tile.value}}
+        </p>
       </md-grid-tile>
     </md-grid-list>
   </div>
@@ -28,6 +30,6 @@
     <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
   </div>
   <div>
-    <h3 ng-click="GC.nextLevel()">Next Level</h3>
+    <h3 ng-click="GC.levelUp()">Next Level</h3>
   </div>
 </div>
