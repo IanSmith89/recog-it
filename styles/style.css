@@ -2,7 +2,7 @@
   display: none !important; }
 
 .grid {
-  background: silver;
+  background: #292929;
   width: 300px;
   height: 400px;
   margin: 0 auto;
@@ -13,7 +13,7 @@
   margin-top: 0; }
 
 .misses {
-  background: silver;
+  background: #292929;
   width: 300px;
   height: 30px;
   margin: 0.55em auto;
@@ -21,31 +21,37 @@
   border-radius: 5px; }
 
 .stats {
-  background: silver;
+  background: #292929;
   width: 300px;
   height: 30px;
   margin: 0.5em auto;
   padding: 1em;
   border-radius: 5px; }
   .stats h2 {
-    color: rgba(0, 0, 0, 0.26);
+    color: rgba(255, 255, 255, 0.26);
     margin: 0; }
 
 .material-icons {
   font-size: 32px;
   margin: 0 12px; }
 
-.material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54); }
-
-.material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26); }
+.material-icons {
+  color: rgba(255, 255, 255, 0.13); }
 
 .level {
   float: left; }
 
 .timer {
   float: right; }
+
+.levelOne {
+  font-size: 8em; }
+
+.levelTwo {
+  font-size: 5.5em; }
+
+.levelThree {
+  font-size: 3em; }
 
 .one {
   background: red; }
@@ -78,7 +84,9 @@ main {
   padding-top: 30px; }
 
 body {
-  background: #efefef; }
+  background: #4f4f4f;
+  color: #efefef;
+  font-family: 'Open Sans', sans-serif; }
 
 md-grid-list {
   height: 400px; }
@@ -86,8 +94,17 @@ md-grid-list {
 md-grid-tile {
   background: gray;
   font-size: 42px;
-  line-height: 36px; }
+  line-height: 36px;
+  border-radius: 4px; }
   md-grid-tile p {
-    color: rgba(0, 0, 0, 0.26); }
+    color: rgba(0, 0, 0, 0.37);
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400; }
+
+h1 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 4em;
+  letter-spacing: 2px;
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */

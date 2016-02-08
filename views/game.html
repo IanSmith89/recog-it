@@ -14,7 +14,7 @@
     <h2 class="timer">{{GC.timer}}</h2>
   </div>
   <div class="grid">
-    <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="0.5%" md-row-height="fit">
+    <md-grid-list md-cols="{{GC.level + 1}}" md-gutter="1%" md-row-height="fit">
       <md-grid-tile ng-repeat="tile in GC.tileList" id="{{tile.value}}" level="{{tile.level}}">
         <p>
           {{tile.value}}
@@ -23,11 +23,7 @@
     </md-grid-list>
   </div>
   <div class="misses">
-    <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-    <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-    <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-    <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
-    <i class="material-icons md-dark md-inactive">radio_button_unchecked</i>
+    <i class="material-icons" ng-repeat="num in [1,2,3,4,5]">radio_button_unchecked</i>
   </div>
   <div>
     <h3 ng-click="GC.levelUp()">Next Level</h3>

@@ -9,6 +9,21 @@ function mdGridTile(gameTiles) {
       var value = Number(attrs.id);
       var root = Number(attrs.level) + 1;
       var tileRatio = value / root;
+      var levelsObj = {
+        '1': 'levelOne',
+        '2': 'levelTwo',
+        '3': 'levelThree',
+        '4': 'levelFour',
+        '5': 'levelFive',
+        '6': 'levelSix',
+        '7': 'levelSeven'
+      };
+
+      for (var key in levelsObj) {
+        if (attrs.level === key) {
+          element.addClass(levelsObj[key]);
+        }
+      }
 
       if (tileRatio <= 1) {
         element.addClass('one');
@@ -29,14 +44,14 @@ function mdGridTile(gameTiles) {
       }
 
       element.on('click', function() {
-        if (gameTiles.check(value) === 'match') {
+        if (gameTiles.check(value, attrs) === 'match') {
           element.css({
-            background: 'rgba(0, 0, 0, 0.1)'
+            background: 'rgba(255, 255, 255, 0.05)'
           })
           .empty();
-        } else if (gameTiles.check(value) === 'level up') {
+        } else if (gameTiles.check(value, attrs) === 'level up') {
           element.css({
-            background: 'rgba(0, 0, 0, 0.1)'
+            background: 'rgba(255, 255, 255, 0.05)'
           })
           .empty();
           console.log('level up');

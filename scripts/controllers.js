@@ -9,8 +9,8 @@ function GameController(gameTiles) {
   vm.game_screen = false;
   vm.recall_screen = false;
   vm.title = 'recog.io';
-  vm.level = gameTiles.level;
   vm.timer = '0:00';
+  vm.level = 1;
   vm.startGame = startGame;
   vm.levelUp = levelUp;
 

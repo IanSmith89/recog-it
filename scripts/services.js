@@ -6,15 +6,12 @@ angular.module('recogApp')
 function gameTiles() {
   this.generate = generate;
   this.check = check;
-  this.level = 1;
-  var root = this.level + 1;
-  var squared = root * root;
   var counter = 1;
 
   function generate(level) {
+    var root = level + 1;
+    var squared = root * root;
     counter = 1;
-    root = level + 1;
-    squared = root * root;
     var tileList = [];
     var randArr = [];
     for (var i = 1; i <= squared; i++) {
@@ -32,7 +29,8 @@ function gameTiles() {
     return tileList;
   }
 
-  function check(value) {
+  function check(value, attrs) {
+    var squared = (attrs.id + 1) * (attrs.id + 1);
     if (value === counter && value === squared) {
       return 'level up';
     } else if (value === counter) {
